@@ -4,4 +4,4 @@ const client = new Client({intents: ["GUILDS", "GUILD_MESSAGES", "DIRECT_MESSAGE
 ["commands"].forEach(x => client[x] = new Collection());
 ["command", "event"].forEach(x => require(`./handlers/${x}.js`)(client));
 
-client.login("OTQyNDUxNTMyODAzMjMxODE0.YgksYw.v1UI04LXbzWYI5-DqPgpB0q1aR0")
+client.login(process.env.token)
