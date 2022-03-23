@@ -7,7 +7,6 @@ module.exports = (client) => {
     {
         const evt = require(`../events/${file}`);
         let eName = file.split(".")[0];
-        console.log(eName)
         client.on(eName, evt.bind(null, client));
     }
 }
