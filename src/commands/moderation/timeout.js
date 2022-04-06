@@ -18,6 +18,4 @@ module.exports = {
 		name: "timeout",
 		description: "timeouts member"
 		}
-
-
 }
