@@ -10,6 +10,7 @@ module.exports = async(client, message) =>
 
      if(!message.content.startsWith("jema"))
      {
+        const illegal_words = ["pavyzdys", "blogaszodis"];
         let channel = message.channel; 
         channel.messages.fetch({limit: 5 }).then(messages => {
         let notsame = 1;
@@ -18,6 +19,15 @@ module.exports = async(client, message) =>
             {
                 arr.push(value);
             }
+            let text = message.content;
+            const splitMessage = text.split(/[ &()_+-={};':",.<>?@\r?\n]/);
+        for (let i = 0; i < illegal_words.length; i++)
+            {
+            if(splitMessage.includes(illegal_words[i]))
+            {
+                message.channel.bulkDelete(1);
+            }
+        }   
         
         for(let i = 1; i < 5; i++)
         {
