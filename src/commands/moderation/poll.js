@@ -9,7 +9,6 @@ module.exports = {
             {
                 return message.channel.send("Incorrect argument count")
             }
-            console.log(arguments)
             const description = arguments[0]
             const timeLimit = arguments[1]
             if(isNaN(timeLimit) || !arguments[1])
@@ -41,7 +40,7 @@ module.exports = {
                         collected
                             .forEach(reaction => {
                                 if(emotes.includes(reaction._emoji.name)) {   
-                                    message.channel.send(reaction._emoji.name + " " + reaction.count
+                                    message.channel.send(options[emotes.indexOf(reaction._emoji.name)] + " " + reaction._emoji.name + " " + reaction.count
                                 )}
                         })}))
                         
