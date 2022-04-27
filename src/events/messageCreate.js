@@ -54,7 +54,11 @@ module.exports = async(client, message) =>
      }
      else
      {
-         if(cmdfile)
+	 if(cmdfile && args == "help")
+		{
+			message.reply(cmdfile.help.name + ": " + cmdfile.help.description);
+		}
+         else if(cmdfile)
          {
              cmdfile.run(client, message, args);    
          }
