@@ -58,9 +58,17 @@ module.exports = async(client, message) =>
 		{
 			message.reply(cmdfile.help.name + ": " + cmdfile.help.description);
 		}
+		else if(!cmdfile && args == "help")
+		{
+			message.reply("entered command does not exist");
+		}
          else if(cmdfile)
          {
              cmdfile.run(client, message, args);    
          }
+		 else
+		 {
+			 message.reply("entered command does not exist");
+		 }
      }
  }
