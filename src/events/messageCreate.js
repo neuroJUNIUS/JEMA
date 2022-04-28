@@ -14,9 +14,36 @@ module.exports = async(client, message) =>
 
      if(!message.content.startsWith("jema"))
      {
+
         anti_swears.check(client, message, (error) => {
             if(error) {
                 console.log(`❌ There was an error with anti-swear word module...`);
+
+        const illegal_words = ["pavyzdys", "blogaszodis"];
+        let channel = message.channel; 
+        channel.messages.fetch({limit: 5 }).then(messages => {
+        let notsame = 1;
+        let arr = [];
+        for(let [key, value] of messages)
+            {
+                arr.push(value);
+            }
+            let text = message.content;
+            const splitMessage = text.split(/[ &()_+-={};':",.<>?@\r?\n]/);
+        for (let i = 0; i < illegal_words.length; i++)
+            {
+            if(splitMessage.includes(illegal_words[i]))
+            {
+                message.channel.bulkDelete(1);
+            }
+        }   
+        
+        for(let i = 1; i < 5; i++)
+        {
+            if(arr[i-1].content != arr[i].content || arr[i-1].author != arr[i].author)
+            {
+                notsame = 0;
+
             }
         });
         anti_spam.check(client, message, (error) => {
@@ -34,8 +61,24 @@ module.exports = async(client, message) =>
                 ]
             });
         }
-        if(cmdfile) {
-            cmdfile.run(client, message, args, (error) => {
+
+        
+        })
+        return;
+     }
+     else
+     {
+	 if(cmdfile && args == "help")
+		{
+			message.reply(cmdfile.help.name + ": " + cmdfile.help.description);
+		}
+		else if(!cmdfile && args == "help")
+		{
+			message.reply("entered command does not exist");
+		}
+         else if(cmdfile)
+         {
+             cmdfile.run(client, message, args, (error) => {
                 if(error) {
                     console.log(`❌ ${cmdfile.help.name} doesn't work! Turning this command off...`);
                     console.log(`Error ${error}`);
@@ -43,7 +86,12 @@ module.exports = async(client, message) =>
                     message.channel.send(`:pray: This command malifunctioned... Turning it off...`);
                     client.malifunctioned.set(cmdfile.help.name, cmdfile);
                 }
-            });    
-        }
-    }
-}
+            });       
+         }
+		 else
+		 {
+			 message.reply("entered command does not exist");
+		 }
+     }
+ }
+
