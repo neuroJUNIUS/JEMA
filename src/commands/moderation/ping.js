@@ -1,7 +1,11 @@
 module.exports = {
     run:
-        async (client,message,args) => {
-            return message.channel.send("Pong");
+        async (client,message,args, error) => {
+            try {
+                return message.send("Pong");
+            } catch(e) {
+                return error(e);
+            }
         },
     help: {
         name:"ping",

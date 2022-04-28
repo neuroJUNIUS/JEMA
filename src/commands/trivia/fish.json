@@ -1,0 +1,142 @@
+[
+    {
+      "id": "0",
+      "name": "Crucian carp",
+      "min_weight": 0.100,
+      "max_weight": 1.500,
+      "image": "https://i.imgur.com/24OrlKf.png"
+    },
+    {
+      "id": "1",
+      "name": "Chinese sleeper",
+      "min_weight": 0.050,
+      "max_weight": 0.700,
+      "image": "https://i.imgur.com/J4C7bGf.png"
+    },
+    {
+      "id": "2",
+      "name": "Bream",
+      "min_weight": 0.150,
+      "max_weight": 4.500,
+      "image": "https://i.imgur.com/TnmJreQ.png"
+    },
+    {
+      "id": "3",
+      "name": "Perch",
+      "min_weight": 0.15,
+      "max_weight": 0.500,
+      "image": "https://i.imgur.com/1gBXvN8.png"
+    },
+    {
+      "id": "4",
+      "name": "Roach",
+      "min_weight": 0.1,
+      "max_weight": 0.3,
+      "image": "https://i.imgur.com/28epuO9.png"
+    },
+    {
+      "id": "5",
+      "name": "Pike",
+      "min_weight": 0.500,
+      "max_weight": 7.000,
+      "image": "https://i.imgur.com/WMLrbm0.png"
+    },
+    {
+      "id": "6",
+      "name": "Asp",
+      "min_weight": 0.700,
+      "max_weight": 3.400,
+      "image": "https://i.imgur.com/usbzFyY.png"
+    },
+    {
+      "id": "7",
+      "name": "Chub",
+      "min_weight": 0.300,
+      "max_weight": 2.394,
+      "image": "https://i.imgur.com/8qz7Jim.png"
+    },
+    {
+      "id": "8",
+      "name": "Catfish",
+      "min_weight": 0.640,
+      "max_weight": 100.000,
+      "image": "https://i.imgur.com/Own48Yp.png"
+    },
+    {
+      "id": "9",
+      "name": "Rudd",
+      "min_weight": 0.15,
+      "max_weight": 0.300,
+      "image": "https://i.imgur.com/CfP1ePW.png"
+    },
+    {
+      "id": "10",
+      "name": "Eel",
+      "min_weight": 1.342,
+      "max_weight": 4.573,
+      "image": "https://i.imgur.com/vYVGeq7.png"
+    },
+    {
+      "id": "11",
+      "name": "Carp",
+      "min_weight": 0.564,
+      "max_weight": 16.342,
+      "image": "https://i.imgur.com/TPKXk5f.png"
+    },
+    {
+      "id": "12",
+      "name": "Vimba",
+      "min_weight": 0.265,
+      "max_weight": 1.284,
+      "image": "https://i.imgur.com/DxKAITk.png"
+    },
+    {
+      "id": "13",
+      "name": "Zander",
+      "min_weight": 0.543,
+      "max_weight": 4.743,
+      "image": "https://i.imgur.com/bJjT271.png"
+    },
+    {
+      "id": "14",
+      "name": "Ide",
+      "min_weight": 0.432,
+      "max_weight": 2.843,
+      "image": "https://i.imgur.com/o01oBXM.png"
+    },
+    {
+      "id": "15",
+      "name": "Sturgeon",
+      "min_weight": 1.683,
+      "max_weight": 25.943,
+      "image": "https://i.imgur.com/KAO270c.png"
+    },
+    {
+      "id": "16",
+      "name": "Trout",
+      "min_weight": 1.503,
+      "max_weight": 5.490,
+      "image": "https://i.imgur.com/XrBjwph.png"
+    },
+    {
+      "id": "17",
+      "name": "Bleak",
+      "min_weight": 0.01,
+      "max_weight": 0.04,
+      "image": "https://i.imgur.com/ooIxVah.png"
+    },
+    {
+      "id": "18",
+      "name": "Tench",
+      "min_weight": 1.840,
+      "max_weight": 3.500,
+      "image": "https://i.imgur.com/YGCidiI.png"
+    },
+    {
+      "id": "19",
+      "name": "Salmon",
+      "min_weight": 2.458,
+      "max_weight": 19.834,
+      "image": "https://i.imgur.com/EmOVefg.png"
+    }
+]
