@@ -25,7 +25,7 @@ module.exports = {
                     check,
                     {$exists: true}
                 ).toArray((err, item) => {
-                    if(item.length > 0) {
+                    if(item) {
                         return callback(true);
                     } else {
                         return callback(false);
