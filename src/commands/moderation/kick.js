@@ -18,6 +18,7 @@ module.exports = {
         },
     help: {
         name:"kick",
-        description:"Kicks user from the server"
+        description:"Kicks user from the server",
+        category:"Moderation"
     }
 }

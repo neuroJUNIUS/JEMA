@@ -20,7 +20,8 @@ module.exports = {
 		},
 	help:{
 		name: "timeout",
-		description: "timeouts member"
+		description: "timeouts member",
+        category:"Moderation"
 		}
 
 

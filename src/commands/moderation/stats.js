@@ -13,8 +13,7 @@ module.exports = {
                 var id = message.guild.id;
                 const guild = client.guilds.cache.find((g) => g.id === id);
     
-                if(!guild)
-                {
+                if(!guild) {
                     return message.channel.send(':woman_facepalming: Something is totaly wrong...?');
                 }
     
@@ -42,12 +41,10 @@ module.exports = {
             
                       message.channel.awaitMessages({ msg_filter, max: 2}).then(collected => {
                             member_stats = collected.last().content; 
-                            console.log(member_stats);
                         }).then(() => {
                             message.reply(':grey_question: How do you want to name bot statistics? (ex. Bots - <bot_count>) ');
                             message.channel.awaitMessages({msg_filter, max:2}).then(collected => {
                                 bot_stats = collected.last().content;
-                                console.log(bot_stats);
                             }).then(async () => {
             
                                 member_stats = member_stats + " " + `${guild_members}`;
@@ -79,9 +76,17 @@ module.exports = {
                                     bot_chan: bots.id
                                 });
             
-                                mongodb.insert(dbname, collection, value, {server_id: id});
+                                mongodb.insert(dbname, collection, value, (e) => {
+                                    if(e) {
+                                        return error(e);
+                                    }
+                                });
                             });
                         });
+                    }
+                }, (e) => {
+                    if(e) {
+                        return error(e);
                     }
                 });
             } catch(e) {
@@ -92,6 +97,7 @@ module.exports = {
         },
     help: {
         name:"stats",
-        description:"Makes bot to track server stats"
+        description:"Makes bot to track server stats",
+        category:"Moderation"
     }
 }

@@ -9,7 +9,11 @@ module.exports = {
                 {
                     return message.channel.send(":woman_facepalming: You need to be in voice channel first");
                 }
-                queue.skipSong(message, message.guild.id);
+                queue.skipSong(message, message.guild.id, (e) => {
+                    if(e) {
+                        return error(e);
+                    }
+                });
             } catch(e) {
                return error(e);
             }
@@ -19,6 +23,7 @@ module.exports = {
     help:
     {
         name:"skip",
-        description:"Skips current song"
+        description:"Skips current song",
+        category:"Music"
     }
 }

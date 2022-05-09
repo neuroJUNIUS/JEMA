@@ -29,7 +29,7 @@ module.exports = {
                         });
                     }
                 }).catch(e => {
-                    console.log(`Error: ${e}`);
+                    return error(e);
                 });
             } catch(e) {
                 return error(e);

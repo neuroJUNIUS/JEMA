@@ -9,6 +9,7 @@ module.exports = {
         },
     help: {
         name:"ping",
-        description:"Ping pong"
+        description:"Ping pong",
+        category:"Moderation"
     }
 }
