@@ -6,14 +6,12 @@ module.exports = {
         async (client, message, args, error) => {     
             try {
                 let arguments = args.join(' ').split(';')
-                if(!args[0] || arguments.length < 2 || arguments.length % 2 != 0)
-                {
+                if(!args[0] || arguments.length < 2 || arguments.length % 2 != 0) {
                     return message.channel.send("Incorrect argument count")
                 }
                 const description = arguments[0]
                 const timeLimit = arguments[1]
-                if(isNaN(timeLimit) || !arguments[1])
-                {
+                if(isNaN(timeLimit) || !arguments[1]) {
                     return message.channel.send("Incorrect time format")
                 }
                 let [options, emotes] = splitArgs(arguments)

@@ -3,8 +3,7 @@ const anti_swears = require('./bad-word.module/bad-word.js');
 const xp_system = require('./xp-system.module/xp-system.js');
 const Discord  = require('discord.js');
 
-module.exports = async(client, message) =>
-{
+module.exports = async(client, message) => {
     const [cmd, ...args] = message.content
     .trim()
     .substring(5)
@@ -20,7 +19,10 @@ module.exports = async(client, message) =>
             }
         });
         xp_system.addLevel(client,message, (error) => {
-            console.log(`❌There was an error with xp system!`);
+            if(error) {
+                console.log(`❌There was an error with xp system!`);
+            }
+
         });
     } catch(e) {
         console.log(`❌There was an error with xp system!`);
@@ -67,13 +69,14 @@ module.exports = async(client, message) =>
                 ]
             });
         }
-
-        if(cmdfile && args == "help") {
+	    if(cmdfile && args == "help") {
 			message.reply(cmdfile.help.name + ": " + cmdfile.help.description);
-		} else if(!cmdfile && args == "help") {
+		}
+		else if(!cmdfile && args == "help") {
 			message.reply("entered command does not exist");
-		} else if(cmdfile) {
-            cmdfile.run(client, message, args, (error) => {
+		}
+        else if(cmdfile) {
+             cmdfile.run(client, message, args, (error) => {
                 if(error) {
                     console.log(`❌ ${cmdfile.help.name} doesn't work! Turning this command off...`);
                     console.log(`Error ${error}`);
@@ -81,7 +84,11 @@ module.exports = async(client, message) =>
                     message.channel.send(`:pray: This command malifunctioned... Turning it off...`);
                     client.malifunctioned.set(cmdfile.help.name, cmdfile);
                 }
-            });    
-        }
-    }
-}
+            });       
+         }
+		 else {
+			message.reply("entered command does not exist");
+		}
+     }
+ }
+
