@@ -12,6 +12,7 @@ module.exports = async(client, message) => {
     let cmdfile = client.commands.get(cmd);
     if(message.author.bot) return;
 
+
     /*try {
         const dbname = "jema_servers";
         const collection = "levels";
@@ -33,6 +34,23 @@ module.exports = async(client, message) => {
     const dbname = "jema_servers";
     const collection = "levels";
     mongodb.addXP(dbname, collection, message)
+
+   /* try {
+        xp_system.addXp(client,message,1, (error) => {
+            if(error) {
+                console.log(`❌There was an error with xp system!`);
+            }
+        });
+        xp_system.addLevel(client,message, (error) => {
+            if(error) {
+                console.log(`❌There was an error with xp system!`);
+            }
+
+        });
+    } catch(e) {
+        console.log(`❌There was an error with xp system!`);
+    }*/
+
 
      if(!message.content.startsWith("jema"))
      {
@@ -57,6 +75,18 @@ module.exports = async(client, message) => {
         }
 
      } else {
+
+        /*try {
+            xp_system.register(client, message, (error) => {
+                if(error) {
+                    console.log(`❌There was an error with xp system!`);
+                }
+            });
+        } catch(e) {
+            console.log(`❌There was an error with xp system!`);
+        }*/
+
+
         if(client.malifunctioned.get(cmd)) {
             message.channel.send({
                 content:`:pray: Command ${cmd} malifunctioned... Our team is working on a fix...`,
