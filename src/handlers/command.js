@@ -12,5 +12,5 @@ module.exports = (client) => {
           };
         };
 
-        ["moderation","owner", "music", "trivia"].forEach(x => load(x));
+        ["moderation","owner", "music", "trivia", "levels"].forEach(x => load(x));
 };
