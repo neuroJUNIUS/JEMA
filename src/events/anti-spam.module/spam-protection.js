@@ -37,6 +37,11 @@ module.exports = {
                                 message.channel.bulkDelete(spamAmount).then(() => {
                                 message.channel.send(`:rage: No spam <@${message.author.id}>`);
                         });
+                    }
+                }).catch(e => {
+                    return error(e);
+                });
+            } catch(e) {
                             }
                     }).catch(e => {
                     console.log(`Error: ${e}`);

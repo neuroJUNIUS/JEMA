@@ -1,4 +1,4 @@
-const {MongoClient} = require("mongodb");
+const {MongoClient, MongoExpiredSessionError} = require("mongodb");
 
 const dotenv = require('dotenv');
 dotenv.config({path: '../'});
@@ -12,16 +12,44 @@ const Levels = require('discord-xp')
 Levels.setURL(connection_url)
 
 module.exports = {
+    remove:
+        async(database, collection, query, error ) => {
+            try {
+                client.connect( (e) => {
+                    if(e) {
+                        return error(e);
+                    }
+                    const db = client.db(database);
+                    db.collection(collection).remove(query), (err, obj) => {
+                        if(err) {
+                            return error(err);
+                        }
+                    }
+                })
+            } catch (e) {
+                return error(e);
+            }
+        },
     insert:
-        async (database, collection, value) => {
-            client.connect((error) => {
-                const db = client.db(database);
-                db.collection(collection).insertOne(value);
-            });
+        async (database, collection, value, error) => {
+            try {
+                client.connect((e) => {
+                    const db = client.db(database);
+                    db.collection(collection).insertOne(value);
+                    if(e) {
+                        return error(e);
+                    }
+                })
+
+            } catch(e) {
+                return error(e);
+            }
+
         },
     check:
-       async (database, collection, check, callback) => {
-            client.connect((error) => {
+       async (database, collection, check, callback, error) => {
+           try {
+            client.connect((e) => {
                 const db = client.db(database);
                 db.collection(collection).find(
                     check,
@@ -33,16 +61,60 @@ module.exports = {
                         return callback(false);
                     }
                 });
+                if(e) {
+                    return error(e);
+                }
             })
+
+           } catch (e) {
+               return error(e);
+           }
+
         },
     get:
-        async (database, collection, criteria, callback) => {
-            client.connect((error) => {
-                const db = client.db(database);
-                db.collection(collection).find(criteria).toArray((err, item) => {
-                    callback(item);
-                })
-            })
+
+        async (database, collection, criteria, callback, error) => {
+            try {
+                client.connect((e) => {
+                    const db = client.db(database);
+                    db.collection(collection).find(criteria).toArray((err, item) => {
+                        callback(item);
+                        if(err) {
+                            return error(e);
+                        }
+                    })
+                    if(e) {
+                        return error(e);
+                    }
+                })           
+             } catch(e) {
+                return error(e);
+            }
+
+        },
+    increment:
+        async (database, collection, criteria, value, callback, error) => {
+            try {
+                client.connect((e) => {
+                    const db = client.db(database);
+                    var newVal = { $set: value };
+                    db.collection(collection).updateOne(criteria, newVal, (err, result) => {
+                        if(err) {
+                            return error(err);
+                        }
+                    });
+                    if(e) {
+                        return error(err);
+                    }
+                });
+            } catch(e) {
+                if(e) {
+                    return error(e);
+                }
+            }
+            
+        }
+        
         },
     addXP:
         async(database, collection, message) => {

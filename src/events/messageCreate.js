@@ -1,5 +1,6 @@
 const anti_spam = require('./anti-spam.module/spam-protection.js');
 const anti_swears = require('./bad-word.module/bad-word.js');
+const xp_system = require('./xp-system.module/xp-system.js');
 const Discord  = require('discord.js');
 const mongodb = require('../connection/connection.js');
 
@@ -13,7 +14,8 @@ module.exports = async(client, message) => {
     if(message.author.bot) return;
 
 
-    /*try {
+
+    try {
         const dbname = "jema_servers";
         const collection = "levels";
         const id = message.author.id;
@@ -30,7 +32,7 @@ module.exports = async(client, message) => {
         });
     } catch(e) {
         return error(e);
-    }*/
+    }
     const dbname = "jema_servers";
     const collection = "levels";
     mongodb.addXP(dbname, collection, message)
@@ -50,6 +52,7 @@ module.exports = async(client, message) => {
     } catch(e) {
         console.log(`❌There was an error with xp system!`);
     }*/
+
 
 
      if(!message.content.startsWith("jema"))
@@ -84,6 +87,7 @@ module.exports = async(client, message) => {
             });
         } catch(e) {
             console.log(`❌There was an error with xp system!`);
+
         }*/
 
 

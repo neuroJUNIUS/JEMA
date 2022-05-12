@@ -6,6 +6,7 @@ module.exports = {
                 {
                     let text = message.content;
 					const array = text.split(" ");
+
                     if(array[2]<2)
                     {
                         return message.reply("The amount of messages for it to be considered spam can't be less than 2");

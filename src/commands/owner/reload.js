@@ -33,5 +33,6 @@ module.exports = {
     {
         name:"reload",
         description:`Reloads the specific command`,
+        category:"Owner"
     }
 }

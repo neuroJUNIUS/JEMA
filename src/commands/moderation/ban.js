@@ -19,6 +19,7 @@ module.exports = {
         },
     help: {
         name:"ban",
-        description:"Bans user from the server"
+        description:"Bans user from the server",
+        category:"Moderation"
     }
 }

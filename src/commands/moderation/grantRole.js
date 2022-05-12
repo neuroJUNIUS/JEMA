@@ -7,8 +7,6 @@ module.exports = {
                     return message.channel.send(":woman_facepalming: Would be great, right?");
                 }
     
-                
-    
                 var user = message.mentions.users.first();
     
                 if(user === undefined) {
@@ -39,6 +37,7 @@ module.exports = {
         },
     help: {
         name:"grantRole",
-        description:"Grants given role to user mentioned"
+        description:"Grants given role to user mentioned",
+        category:"Moderation"
     }
 }

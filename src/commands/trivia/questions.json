@@ -1,0 +1,218 @@
+[
+    {
+        "question":"Which languages are from c family?:",
+        "ans_a":"Java, B, Perl",
+        "ans_b":"PHP, Python, Haskell",
+        "ans_c":"SQL, DDL, ORM",
+        "ans_d":"HTML, CSS, JS",
+        "level":0,
+        "correct":"🇦"
+    },
+    {
+        "question":"Which languages are used for web-based programming:",
+        "ans_a":"Java, B, Perl",
+        "ans_b":"PHP, Python, Haskell",
+        "ans_c":"SQL, DDL, ORM",
+        "ans_d":"HTML, CSS, JS",
+        "level":0,
+        "correct":"🇩"        
+    },
+    {
+        "question":"Which is correct way to define class constructor in Python:",
+        "ans_a":"public class()",
+        "ans_b":"__init__()",
+        "ans_c":"class()",
+        "ans_d":"Python doesn't have classes",
+        "level":0,
+        "correct":"🇧"        
+    },
+    {
+        "question":"Are variables mutable in functional programming:",
+        "ans_a":"Yes",
+        "ans_b":"No",
+        "ans_c":"What is functional programming?",
+        "ans_d":"I don't even know what word mutable even means",
+        "level":0,
+        "correct":"🇧"        
+    },
+    {
+        "question":"Why Java programming language is kind of slow?",
+        "ans_a":"Because it's output .jar is not compatible with any operating system",
+        "ans_b":"Because you need a high-end computer in order to run Java code",
+        "ans_c":"Because it host's JVM as interpretator in order to run code anywhere",
+        "ans_d":"Because it only overwrites eax register in x86 systems",
+        "level":0,
+        "correct":"🇨"        
+    },
+    {
+        "question":"What is the meaning of  non-deterministic polinomial time problem?",
+        "ans_a":"It is the problem, which can't be solved optimaly in polimial time complexity",
+        "ans_b":"It is the problem, which can only be solved in undeterminated time",
+        "ans_c":"It means we can ONLY solve the problem by using dynamic programing ",
+        "ans_d":"It means the most-optimal solution to the problem has time complexity of O(n)",
+        "level":1,
+        "correct":"🇦"        
+    },
+    {
+        "question":"Why you should use dependency injection rather then just importing the class",
+        "ans_a":"Because you can make and encapsulate multiple classes rather then just one",
+        "ans_b":"Because it's just faster this way",
+        "ans_c":"Because the class inherits functionality from other classes that are encapsulated in the same interface ",
+        "ans_d":"You shouldn't, because imports is better for exception handling and testing",
+        "level":2,
+        "correct":"🇦"        
+    },
+    {
+        "question":"How is word 06FE stored in the CPU storage?",
+        "ans_a":"06 FE",
+        "ans_b":"60 EF",
+        "ans_c":"FE 60",
+        "ans_d":"FE 06",
+        "level":2,
+        "correct":"🇩"       
+    },
+    {
+        "question":"Why is ansynchronality pretty harmful in programing?",
+        "ans_a":"Actually, I think synchronised programming is more harmful",
+        "ans_b":"Because you can get issues with synchronality",
+        "ans_c":"Because system waits for another process when she completes it ",
+        "ans_d":"Because it's harmful",
+        "level":0,
+        "correct":"🇧"        
+    },
+    {
+        "question":"What is the name of the architecture that most of nowadays computers use?",
+        "ans_a":"Von Newmann architecture ",
+        "ans_b":"Harward architecture ",
+        "ans_c":"Google architecture  ",
+        "ans_d":"CPI LTS architecture ",
+        "level":1,
+        "correct":"🇦"        
+    },
+    {
+        "question":"0x7FFFFFFFF?",
+        "ans_a":"Floating pointer lol ",
+        "ans_b":"2,147,483,647",
+        "ans_c":"The infinity of our finite 32 bit integers  ",
+        "ans_d":"Stack overflow exception ",
+        "level":1,
+        "correct":"🇨"        
+    },
+    {
+        "question":"What does the term **Tabula Rasa** mean?",
+        "ans_a":"Clear soul, usualy a newborn's soul ",
+        "ans_b":"A perfect crime",
+        "ans_c":"Integer of 0 ",
+        "ans_d":"An unknown error",
+        "level":0,
+        "correct":"🇦"        
+    },
+    {
+        "question":"What is a multiplexer?",
+        "ans_a":"An accumulator",
+        "ans_b":"Basicaly, a big sumator",
+        "ans_c":"EAX register ",
+        "ans_d":"EAX, EBX, ECX, EDX registers",
+        "level":0,
+        "correct":"🇧"        
+    },
+    {
+        "question":"What can happen on 2038?",
+        "ans_a":"If we stay on 32 bit integers, the unix timestamp will reach its limit  ",
+        "ans_b":"Our dates in computers will travel back to 01-01-1970",
+        "ans_c":"Year 2038 problem ",
+        "ans_d":"All of the above",
+        "level":0,
+        "correct":"🇩"        
+    },
+    {
+        "question":"Why is free energy not possible?",
+        "ans_a":"It is possible, I saw it on YouTube",
+        "ans_b":"Because it would create a black-hole",
+        "ans_c":"Because it would break every known physical law",
+        "ans_d":"All of the above",
+        "level":0,
+        "correct":"🇨"        
+    },
+    {
+        "question":"Who is the father of Computer Science?",
+        "ans_a":"Von Neumann",
+        "ans_b":"Leibniz",
+        "ans_c":"Turing",
+        "ans_d":"Enigma",
+        "level":0,
+        "correct":"🇨"        
+    },
+    {
+        "question":"What is the limit of 8 bit integer?",
+        "ans_a":"FF",
+        "ans_b":"00",
+        "ans_c":"FE",
+        "ans_d":"256",
+        "level":0,
+        "correct":"🇦"        
+    },
+    {
+        "question":"Which of the proccesses is the best for any project?",
+        "ans_a":"Agile or Unified Proccess",
+        "ans_b":"It depends on the project that you are making",
+        "ans_c":"Waterfall",
+        "ans_d":"Spiral",
+        "level":0,
+        "correct":"🇧"        
+    },
+    {
+        "question":"Why Waterfall proccess was so popular?",
+        "ans_a":"Because it has a very good backtracking option",
+        "ans_b":"Because usualy it outputs a very good documentation",
+        "ans_c":"Because it was the first proccess ever documentated",
+        "ans_d":"Because it was in DoD standart",
+        "level":0,
+        "correct":"🇩"        
+    },
+    {
+        "question":"What is the biggest downside of the pointers in C/C++?",
+        "ans_a":"They are very slow",
+        "ans_b":"They are decreasing readability",
+        "ans_c":"They are decreasing orthogonality",
+        "ans_d":"They are not efficient",
+        "level":1,
+        "correct":"🇧"        
+    },
+    {
+        "question":"In the world of Haskell, what would expression maxKings::Integer->Integer->Integer",
+        "ans_a":"There is function maxKings with 3 input arguments as Integers",
+        "ans_b":"There is linked list maxKings with 3 integers as Nodes ",
+        "ans_c":"There is function maxKings with 2 input arguments as Integers and it outputs Integer",
+        "ans_d":"There is function MaxKings that outputs 3 Integer",
+        "level":1,
+        "correct":"🇨"        
+    },
+    {
+        "question":"In the world of Assembler, what does the function JMP do?",
+        "ans_a":"Jumps to pointer given",
+        "ans_b":"Jumps between segments ",
+        "ans_c":"Jumps to value stored in EAX/EBX/ECX/EDX registers",
+        "ans_d":"All of the above",
+        "level":2,
+        "correct":"🇩"        
+    },
+    {
+        "question":"What is the default language for Linux/Unix OS?",
+        "ans_a":"Shell",
+        "ans_b":"Bash",
+        "ans_c":"zsh",
+        "ans_d":"Posix C",
+        "level":0,
+        "correct":"🇧"        
+    },
+    {
+        "question":"What does the word perceptron mean?",
+        "ans_a":"It's something that is similar to artificial neuron",
+        "ans_b":"It's neuron with perception",
+        "ans_c":"It is the Mark I Perceptron machine",
+        "ans_d":"In deep neutral net, it is a feature vector",
+        "level":2,
+        "correct":"🇦"        
+    }
+]
