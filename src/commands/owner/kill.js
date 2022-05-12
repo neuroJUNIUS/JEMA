@@ -2,6 +2,7 @@ const child_process = require('child_process')
 
 module.exports = {
     run:
+
         async (client, message, args, error) => {     
             try {
                 message.channel.send("Killing...")

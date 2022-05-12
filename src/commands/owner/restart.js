@@ -2,6 +2,7 @@ const child_process = require('child_process')
 
 module.exports = {
     run:
+
         async (client, message, args, error) => {
             try {
                 message.channel.send("Restarting...")
@@ -9,6 +10,7 @@ module.exports = {
             } catch(e) {
                 return error(e);
             }  
+
         },
     help: {
         name: "restart",

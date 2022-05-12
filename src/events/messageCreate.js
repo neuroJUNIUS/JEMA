@@ -2,6 +2,7 @@ const anti_spam = require('./anti-spam.module/spam-protection.js');
 const anti_swears = require('./bad-word.module/bad-word.js');
 const xp_system = require('./xp-system.module/xp-system.js');
 const Discord  = require('discord.js');
+const mongodb = require('../connection/connection.js');
 
 module.exports = async(client, message) => {
     const [cmd, ...args] = message.content
@@ -12,7 +13,31 @@ module.exports = async(client, message) => {
     let cmdfile = client.commands.get(cmd);
     if(message.author.bot) return;
 
+
+
     try {
+        const dbname = "jema_servers";
+        const collection = "levels";
+        const id = message.author.id;
+        const guild_id = message.guild.id;
+
+        mongodb.check(dbname, collection, {author_id: id}, (result) => {
+            if(result) {
+                mongodb.get(dbname, collection, {author_id: id}, (xp) => {
+                    mongodb.insert(dbname, collection, xp + 100, {author_id: id, guild_id: guild_id})
+                })
+            } else {
+                mongodb.insert(dbname, collection, 100, {author_id: id, guild_id: guild_id});
+            }
+        });
+    } catch(e) {
+        return error(e);
+    }
+    const dbname = "jema_servers";
+    const collection = "levels";
+    mongodb.addXP(dbname, collection, message)
+
+   /* try {
         xp_system.addXp(client,message,1, (error) => {
             if(error) {
                 console.log(`❌There was an error with xp system!`);
@@ -26,7 +51,9 @@ module.exports = async(client, message) => {
         });
     } catch(e) {
         console.log(`❌There was an error with xp system!`);
-    }
+    }*/
+
+
 
      if(!message.content.startsWith("jema"))
      {
@@ -51,7 +78,8 @@ module.exports = async(client, message) => {
         }
 
      } else {
-        try {
+
+        /*try {
             xp_system.register(client, message, (error) => {
                 if(error) {
                     console.log(`❌There was an error with xp system!`);
@@ -59,7 +87,9 @@ module.exports = async(client, message) => {
             });
         } catch(e) {
             console.log(`❌There was an error with xp system!`);
-        }
+
+        }*/
+
 
         if(client.malifunctioned.get(cmd)) {
             message.channel.send({
@@ -91,4 +121,3 @@ module.exports = async(client, message) => {
 		}
      }
  }
-
