@@ -14,6 +14,7 @@ module.exports = {
         },
     help: {
         name: "kill",
-        description: "Kills the bot"
+        description: "Kills the bot",
+        category: "Owner"
     }
 }

@@ -1,7 +1,5 @@
 const anti_spam = require('./anti-spam.module/spam-protection.js');
 const anti_swears = require('./bad-word.module/bad-word.js');
-const xp_system = require('./xp-system.module/xp-system.js');
-const Discord  = require('discord.js');
 const mongodb = require('../connection/connection.js');
 
 module.exports = async(client, message) => {
@@ -24,18 +22,38 @@ module.exports = async(client, message) => {
         mongodb.check(dbname, collection, {author_id: id}, (result) => {
             if(result) {
                 mongodb.get(dbname, collection, {author_id: id}, (xp) => {
-                    mongodb.insert(dbname, collection, xp + 100, {author_id: id, guild_id: guild_id})
+                    mongodb.insert(dbname, collection, {xp: xp + 100,author_id: id, guild_id: guild_id}, (error) => {
+                        if(error) {
+                            console.log(`❌There was an error with xp system!`);
+                        }
+                    })
+                }, (error) => {
+                    if(error) {
+                        console.log(`❌There was an error with xp system!`);
+                    }
                 })
             } else {
-                mongodb.insert(dbname, collection, 100, {author_id: id, guild_id: guild_id});
+                mongodb.insert(dbname, collection, {xp : 100,author_id: id, guild_id: guild_id}, (error) => {
+                    if(error) {
+                        console.log(`❌There was an error with xp system!`);
+                    }
+                });
+            }
+        }, (error) => {
+            if(error) {
+                console.log(`❌There was an error with xp system!`);
             }
         });
     } catch(e) {
-        return error(e);
+            console.log(`❌There was an error with xp system!`);
     }
     const dbname = "jema_servers";
     const collection = "levels";
-    mongodb.addXP(dbname, collection, message)
+    mongodb.addXP(dbname, collection, message, (error) => {
+        if(error) {
+            console.log(`❌There was an error with xp system!`);
+        }
+    })
 
    /* try {
         xp_system.addXp(client,message,1, (error) => {

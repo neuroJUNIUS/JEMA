@@ -10,6 +10,8 @@ module.exports = {
                 let moderationCommands = ` \n :eyes: **Moderation** comamnds: \n`;
                 let ownerCommands = `\n :hammer: **Owner** commands: \n`;
                 let malifunctionedCommands = `\n :x: **Malifunctioned** commands \n`;
+                let levelCommands = `\n :test_tube: **Level** commands \n`;
+                let webCommands = `\n :globe_with_meridians: **Web** commands \n `;
                 let description;
                 
                 client.commands.forEach((entry) => {
@@ -27,6 +29,12 @@ module.exports = {
                         if(entry.help.category == "Owner") {
                             ownerCommands += `\`${entry.help.name}\` - ${entry.help.description} \n`;
                         }
+                        if(entry.help.category == "Level") {
+                            levelCommands += `\`${entry.help.name}\` - ${entry.help.description} \n`;
+                        }
+                        if(entry.help.category == "Web") {
+                            webCommands += `\`${entry.help.name}\` - ${entry.help.description} \n`;
+                        }
                     }
 
                 });
@@ -37,7 +45,7 @@ module.exports = {
                         malifunctionedCommands += ` \`${entry.help.name}\` - ${entry.help.description} :disappointed_relieved:\n`;
                     })
                 }
-                description = musicCommands + triviaCommands + moderationCommands + ownerCommands + malifunctionedCommands;
+                description = musicCommands + triviaCommands + levelCommands + webCommands + moderationCommands + ownerCommands + malifunctionedCommands;
                 let helpResult = new MessageEmbed().setTitle(`JEMA command list:`).setDescription(description).setThumbnail(`https://icons-for-free.com/download-icon-data+help+info+information+service+support+icon-1320086104445890290_512.png`).setTimestamp().setFooter(`jema help`);
                 message.channel.send({embeds: [helpResult]});
             } catch(e) {

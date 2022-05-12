@@ -39,14 +39,9 @@ module.exports = {
                         });
                     }
                 }).catch(e => {
-                    return error(e);
+                    console.log(`Error: ${e}`);
                 });
             } catch(e) {
-                            }
-                    }).catch(e => {
-                    console.log(`Error: ${e}`);
-                    });
-            }catch(e) {
                 return error(e);
             }
         }

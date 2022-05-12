@@ -7,17 +7,6 @@ module.exports = {
         async (client,message,args, error) => {
             try {
 
-                try {
-                    xp_system.addXp(client,message,-2, (err) => {
-                        if(err) {
-                            console.log(`❌There was an error with xp system(dice.js)!`);
-                            return error(err);
-                        }
-                    });
-                } catch(e) {
-                    console.log(`❌There was an error with xp system(dice.js)!`);
-                    return error(e);
-                }
                 if(!args[0]) {
                     return message.channel.send(`:woman_facepalming: You need to make a guess`);
                 }
@@ -38,16 +27,6 @@ module.exports = {
                 }).then( () => {
                     setTimeout( () => {
                         if(args[0] == correct) {
-                            try {
-                                xp_system.addXp(client,message,5, (err) => {
-                                    if(err) {
-                                        console.log(`❌There was an error with xp system!(dice.js)`);
-                                        return error(e);
-                                    }
-                                });
-                            } catch(e) {
-                                return error(e);
-                            }
                             return message.channel.send(`:earth_africa: Congratulations ${message.author}, your guess was correct!`);
                         } else {
                             return message.channel.send(`:disappointed_relieved: Bad luck, ${message.author}, your guess was wrong...`);

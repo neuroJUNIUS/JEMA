@@ -29,90 +29,12 @@ module.exports = {
 
                     if(reaction.emoji.name == questions[random].correct) {
                         question_msg.delete(5000);
-                        switch(questions[random].level) {
-                            case 0: {
-                                xp_system.addXp(client,message,9, (e) => {
-                                    if(e) {
-                                        console.log(`❌There was an error with xp system! (question.js)`);
-                                        return error(e);                                       
-                                    }
-                                });
-                            }
-                            case 1: {
-                                xp_system.addXp(client,message,15,(e) => {
-                                    if(e) {
-                                        console.log(`❌There was an error with xp system! (question.js)`);
-                                        return error(e);                                       
-                                    }
-                                });
-                            }
-                            case 2: {
-                                xp_system.addXp(client,message,20,(e) => {
-                                    if(e) {
-                                        console.log(`❌There was an error with xp system! (question.js)`);
-                                        return error(e);                                       
-                                    }
-                                });
-                            }
-                        }
                         return message.channel.send(`:earth_africa: Congratulations, ${message.author}, your answer was correct!`);
                     } else {
-                        switch(questions[random].level) {
-                            case 0: {
-                                xp_system.addXp(client,message,-9,(e) => {
-                                    if(e) {
-                                        console.log(`❌There was an error with xp system! (question.js)`);
-                                        return error(e);                                       
-                                    }
-                                });
-                            }
-                            case 1: {
-                                xp_system.addXp(client,message,-15,(e) => {
-                                    if(e) {
-                                        console.log(`❌There was an error with xp system! (question.js)`);
-                                        return error(e);                                       
-                                    }
-                                });
-                            }
-                            case 2: {
-                                xp_system.addXp(client,message,-20,(e) => {
-                                    if(e) {
-                                        console.log(`❌There was an error with xp system! (question.js)`);
-                                        return error(e);                                       
-                                    }
-                                });
-                            }
-                        }
                         question_msg.delete(5000);
                         return message.channel.send(`:disappointed_relieved::gun: Bad luck, ${message.author}, your answer was wrong...`);
                     }
                 }).catch(() => {
-                    switch(questions[random].level) {
-                        case 0: {
-                            xp_system.addXp(client,message,-9,(e) => {
-                                if(e) {
-                                    console.log(`❌There was an error with xp system! (question.js)`);
-                                    return error(e);                                       
-                                }
-                            });
-                        }
-                        case 1: {
-                            xp_system.addXp(client,message,-15,(e) => {
-                                if(e) {
-                                    console.log(`❌There was an error with xp system! (question.js)`);
-                                    return error(e);                                       
-                                }
-                            });
-                        }
-                        case 2: {
-                            xp_system.addXp(client,message,-20,(e) => {
-                                if(e) {
-                                    console.log(`❌There was an error with xp system! (question.js)`);
-                                    return error(e);                                       
-                                }
-                            });
-                        }
-                    }
                     question_msg.delete(5000);
                     return message.channel.send(`:woman_facepalming: ${message.author}, you did not answer in time!`);
                 });

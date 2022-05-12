@@ -1,5 +1,4 @@
 require('dotenv').config();
-const mongodb = require('./connection/connection.js');
 global.__basedir = __dirname;
 const { Client, Collection, Intents } = require('discord.js');
 

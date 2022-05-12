@@ -14,6 +14,7 @@ module.exports = {
         },
     help: {
         name: "restart",
-        description: "Restarts the bot"
+        description: "Restarts the bot",
+        category: "Owner"
     }
 }

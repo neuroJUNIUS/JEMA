@@ -49,6 +49,10 @@ module.exports =
                         }
                     });
                 }, 5000);
+            }, (e) => {
+                if(e) {
+                    console.log(`❌ Birthday check doesn't work...`);                           
+                }
             });
 
         } catch(e) {

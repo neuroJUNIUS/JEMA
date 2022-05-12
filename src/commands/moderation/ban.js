@@ -11,7 +11,7 @@ module.exports = {
                     member.ban();
                 }
                 else {
-                    message.reply("no perms to ban" + message.mentions.members.first());
+                    message.reply(`no perms to ban ${message.mentions.members.first()}`);
                 }
             } catch(e) {
                 return error(e);

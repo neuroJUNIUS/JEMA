@@ -11,7 +11,7 @@ module.exports = {
                     member.kick();
                 }
                 else
-                    return message("No perms + L");
+                    return message.channel.send("No perms + L");
             } catch(e) {
                 return error(e);
             }

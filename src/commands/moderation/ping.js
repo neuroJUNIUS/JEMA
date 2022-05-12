@@ -2,7 +2,7 @@ module.exports = {
     run:
         async (client,message,args, error) => {
             try {
-                return message.channel.send("Pong");
+                return message.send("Pong");
             } catch(e) {
                 return error(e);
             }

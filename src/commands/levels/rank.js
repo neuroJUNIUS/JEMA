@@ -4,6 +4,7 @@ module.exports = {
     run:
         async (channel, message) => {     
             const target = message.mentions.users.first() || message.author; 
+
             mongodb.Levels.fetch(target.id, message.guild.id)
                 .then(result => {
                     if(!result) {
@@ -15,6 +16,7 @@ module.exports = {
         },
     help: {
         name: "rank",
-        description: "Shows your current level"
+        description: "Shows your current level",
+        category: "Level"
     }
 }

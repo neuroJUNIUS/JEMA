@@ -29,6 +29,7 @@ module.exports = {
         },
     help: {
         name: "leaderboard",
-        description: "Shows your current level"
+        description: "Shows level leaderboard of this server",
+        category: "Level"
     }
 }
