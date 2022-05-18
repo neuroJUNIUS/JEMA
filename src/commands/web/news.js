@@ -123,11 +123,19 @@ module.exports = {
                             .setDescription(textArr1[0])
 
 
-                        for(let j = 1; j < textArr1.length-2; j++)
-                        {
-
-                            embedd.addField(`${j}`, textArr1[j] + "\n");
-                        }
+                        let count = textArr1[0].length;
+					for(let j = 1; j < textArr1[j].length-1; j++)
+					{
+						count += textArr1[j].length;
+						if(count < 5500)
+							embedd.addField(`${j}`, textArr1[j] + "\n");
+						else
+							{
+								embedd.addField("T\u0119sti", `Toliau skaitykite https://www.respublika.lt${website}`);
+								break;
+							}
+							
+					}
                         
                         return message.channel.send({embeds: [embedd] });
                         //return textArr1.forEach(value => message.channel.send(`${value}\n`));
